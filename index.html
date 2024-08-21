@@ -7,7 +7,6 @@
 </head>
 <body>
     <div>
-        <h2>视频文件自动播放</h2>
         <div id="response"></div>
     </div>
 
@@ -62,7 +61,7 @@
         ws.onmessage = function(event) {
             const message = JSON.parse(event.data);
             if (message.action === "updateVideo") {
-                document.getElementById("response").innerText = "视频地址是：" + message.url;
+                document.getElementById("response").innerText = "m3u8地址：" + message.url;
                 playVideo(message.url); // 播放响应视频
                 isDefaultVideo = false; // 设置当前视频为响应视频
             }
